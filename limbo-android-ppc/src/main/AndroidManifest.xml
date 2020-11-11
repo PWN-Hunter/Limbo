@@ -23,7 +23,7 @@
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/limbo"
-        android:label="Limbo PowerPC Emulator"
+        android:label="Limbo PowerPC"
         android:largeHeap="true" >
         <activity
             android:name=".LimboEmuActivity"

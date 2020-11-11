@@ -22,7 +22,7 @@
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/limbo"
-        android:label="Limbo ARM Emulator"
+        android:label="Limbo ARM"
         android:largeHeap="true" >
         <activity
             android:name=".LimboEmuActivity"
