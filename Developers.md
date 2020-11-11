@@ -1,33 +1,32 @@
 ## Limbo Emulator (QEMU) for Android
 
--------------------------------------------------------------------------------
+================================================================================
 
 1. What is Limbo?
 
-* Limbo is a QEMU-based emulator for Android. It currently supports PC emulation  for Intel x86 architecture. For more information, instructions, guides, known issues, and downloads visit:
-* https://github.com/limboemu/limbo
+Limbo is a QEMU-based emulator for Android. It currently supports PC emulation 
+for Intel x86 architecture.
+For more information, instructions, guides, known issues, and downloads visit:
+https://github.com/limboemu/limbo
 
-
--------------------------------------------------------------------------------
+===============================================================================
 
 2. Requirements:
 
-*    Android SDK
-*    Android NDK r14b/gcc (clang is optional but generates slower runtime binaries)
-*    Android Studio (4.1 prefered)
-*    Android device with Android OS 9.0 (Pie) and above
-*    Linux Desktop pc (Ubuntu prefered)
-*    Make sure you have the following packages installed, if not run:
-*    sudo apt install make autoconf automake git python binutils libtool-bin pkg-config flex bison
+    Android SDK
+    Android NDK r14b/gcc (clang is optional but generates slower runtime binaries)
+    Android Studio (4.1 prefered)
+    Android device with Android OS 9.0 (Pie) and above
+    Linux Desktop pc (Ubuntu prefered)
+    Make sure you have the following packages installed, if not run:
+    sudo apt install make autoconf automake git python binutils libtool-bin pkg-config flex bison
 
-
--------------------------------------------------------------------------------
+===============================================================================
 
 3. Known Issues:
-*    https://github.com/limboemu/limbo/issues
+    https://github.com/limboemu/limbo/issues
 
-
--------------------------------------------------------------------------------
+===============================================================================
 4. Setup Environment
 
     a. Update variables for paths to NDK directories for your Build Environment
@@ -40,45 +39,38 @@
 
 5. Get and Patch libraries
 
-    #### Make sure you're under the jni directory
-    ```
+    #Make sure you're under the jni directory
     cd ./limbo-android-lib/src/main/jni
-    ```
-    #### Note: if some of these file links don't download with wget use your browser to download them
+
+    #Note: if some of these file links don't download with wget use your browser to download them
 
     ##### Get QEMU (modify the path to .../qemu-4.0.0.tar.xz if you compile with QEMU 4.0.0 instead)
-    ```
     wget http://download.qemu-project.org/qemu-2.9.1.tar.xz -P /tmp/
     tar -xJf /tmp/qemu-2.9.1.tar.xz
     mv qemu-2.9.1 qemu
-    ```
+
     ##### GET glib
-    ```
     wget https://ftp.gnome.org/pub/GNOME/sources/glib/2.56/glib-2.56.1.tar.xz -P /tmp/
     tar -xJf /tmp/glib-2.56.1.tar.xz
     mv glib-2.56.1 glib
-    ```
+
     ##### GET libffi
-    ```
     wget https://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz -P /tmp/
     tar -xzf /tmp/libffi-3.2.1.tar.gz
     mv libffi-3.2.1 libffi
-    ```
+
     ##### GET pixman
-    ```
     wget https://www.cairographics.org/releases/pixman-0.34.0.tar.gz -P /tmp/
     tar -xzf /tmp/pixman-0.34.0.tar.gz
     mv pixman-0.34.0 pixman
-    ```
+
     ##### GET SDL2
-    ```
     wget https://www.libsdl.org/release/SDL2-2.0.8.tar.gz -P /tmp/
     tar -xzf /tmp/SDL2-2.0.8.tar.gz
     mv SDL2-2.0.8 SDL2
-    ```
-    Now you should have this directory structure:
 
-    jni\
+    Now you should have this directory structure:
+    jni/
         android-config/
         compat/
         glib/
@@ -90,40 +82,33 @@
         SDL2/
 
 
-
     ### If you want to compile with QEMU 2.9.1:
-    ```
     cd ./limbo-android-lib/src/main/jni/qemu/
     patch -p1 < ../patches/qemu-2.9.1.patch
-    ```
 
     ### Or if you want to compile with QEMU 4.0.0:
-    ```
     cd ./limbo-android-lib/src/main/jni/qemu/
     patch -p1 < ../patches/qemu-4.0.0.patch
-    ```
-    ### For QEMU 4.0.0 you also need to modify file android-config/android-qemu-config.mak:
-*        set to false: USE_QEMUSTAB ?= false
-*        set to true: USE_SLIRP_LIB ?= true
-*        comment line: #PIXMAN = --with-system-pixman
-*        #MISC += --disable-capstone
-*        #MISC += --disable-malloc-trim
-*        set to false: USE_SDL_ABI ?= false
-    ### Also if you want to enable to explicitly enable MTTCG modify Config.java:
-*        set to true: public static boolean enableMTTCG = true;
+    For QEMU 4.0.0 you also need to modify file android-config/android-qemu-config.mak:
+        set to false: USE_QEMUSTAB ?= false
+        set to true: USE_SLIRP_LIB ?= true
+        comment line: #PIXMAN = --with-system-pixman
+        #MISC += --disable-capstone
+        #MISC += --disable-malloc-trim
+        set to false: USE_SDL_ABI ?= false
+     Also if you want to enable to explicitly enable MTTCG modify Config.java:
+        set to true: public static boolean enableMTTCG = true;
 
-    ### Apply glib patch for Limbo
-    ```
+    ### Apply glib patch for Limbo:
     cd ./limbo-android-lib/src/main/jni/glib/
     patch -p1 < ../patches/glib-2.56.1.patch
-    ```
 
-    ### Other QEMU versions
-    ```
+
+    ### Other QEMU versions:
     If you want to distribute Limbo build with other QEMU versions, create your own patch like this:
     cd /limbo-android-lib/src/main/jni/qemu/
     diff -ru --no-dereference /tmp/qemu-x.x.x . | grep -v '^Only in' > ../patches/qemu-x.x.x.patch
-    ```
+
 ===============================================================================
 5. Build
 
