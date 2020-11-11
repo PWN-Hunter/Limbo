@@ -11,4 +11,4 @@
 *	Sparc
 
 #### For developers
-* read file README.developers for instructions on how to compile on your own and other useful information.
+* https://github.com/PWN-Hunter/Limbo/blob/Limbo/Developers.md
