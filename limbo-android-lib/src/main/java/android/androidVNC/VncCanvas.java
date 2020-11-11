@@ -38,7 +38,7 @@ import android.graphics.Paint.Style;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Handler;
-import android.support.v7.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Display;
@@ -46,15 +46,10 @@ import android.view.InputDevice;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.antlersoft.android.bc.BCFactory;
 import com.max2idea.android.limbo.main.Config;
-import com.max2idea.android.limbo.main.LimboVNCActivity;
 import com.max2idea.android.limbo.utils.UIUtils;
-
-import org.libsdl.app.SDLActivity;
 
 import java.io.IOException;
 import java.util.zip.Inflater;

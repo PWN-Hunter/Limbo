@@ -17,7 +17,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Vibrator;
-import android.support.v4.view.MenuItemCompat;
+import androidx.core.view.MenuItemCompat;
 
 import android.util.Log;
 import android.view.Display;

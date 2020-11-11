@@ -22,13 +22,13 @@
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/limbo"
-        android:label="Limbo x86 PC Emulator"
+        android:label="Kek x86 PC"
         android:largeHeap="true"
         >
         <activity
             android:name=".LimboEmuActivity"
             android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize"
-            android:label="Limbo x86"
+            android:label="Kek x86 PC"
             android:launchMode="singleTask"
             android:theme="@style/Theme.AppCompat.NoActionBar" >
             <intent-filter>
