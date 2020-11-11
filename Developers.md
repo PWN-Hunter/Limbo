@@ -1,4 +1,4 @@
-Limbo Emulator (QEMU) for Android
+## Limbo Emulator (QEMU) for Android
 
 ================================================================================
 
@@ -15,11 +15,11 @@ https://github.com/limboemu/limbo
 
     Android SDK
     Android NDK r14b/gcc (clang is optional but generates slower runtime binaries)
-    Android Studio (3.1.1 prefered)
-    Android device with Android OS 5.0 (Lollipop) and above
+    Android Studio (4.1 prefered)
+    Android device with Android OS 9.0 (Pie) and above
     Linux Desktop pc (Ubuntu prefered)
     Make sure you have the following packages installed, if not run:
-    sudo apt-get install make autoconf automake git python binutils libtool-bin pkg-config flex bison
+    sudo apt install make autoconf automake git python binutils libtool-bin pkg-config flex bison
 
 ===============================================================================
 
