@@ -10,5 +10,8 @@
 *	PowerPC/PowerPC64
 *	Sparc
 
+# Releases
+* https://github.com/PWN-Hunter/Limbo/releases
+
 #### For developers
 * https://github.com/PWN-Hunter/Limbo/blob/Limbo/Developers.md
